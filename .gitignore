@@ -46,9 +46,6 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-# nodeenv
-.nenv-google-app-script-helpers/
-
 # project
 node_modules/**
 **/dist/**
