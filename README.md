@@ -9,13 +9,11 @@ It tries to solve the most common tasks when creating and maintaining code for t
   npm install -g @google/clasp gulp@4
   npm install
   ```
-  
 1. If you haven't done yet, log in to clasp and follow the steps
   ```bash
   clasp login
   ```
-
-1. Scaffold a project (`/MyProject` and `MyProject/src`) 
+1. Scaffold a project
   ```bash
   # Use the gulp shortcut
   gulp scaffold --project-dir="MyProject"
@@ -24,7 +22,6 @@ It tries to solve the most common tasks when creating and maintaining code for t
   mkdir MyProject && cd MyProject
   mkdir src && cd src
   ```
-
 1. Fetch an existing project or create a new one within a src folder
   ```bash
   # Go the the project's base dir
@@ -36,7 +33,6 @@ It tries to solve the most common tasks when creating and maintaining code for t
   # ...or pull an existing one
   clasp pull
   ```
-  
 1. You're ready to go! You can build or watch a project or execute a sub task
   ```bash
   # Go to the git project's root
