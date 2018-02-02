@@ -1,1 +1,0 @@
-Logger.log('Hello world!');
