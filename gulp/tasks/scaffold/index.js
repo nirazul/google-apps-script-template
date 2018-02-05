@@ -16,8 +16,8 @@ function scaffold(resolve) {
     throwPluginError('scaffold', new Error(`You must specify the project name via the '--project-dir="path/to/projectfolder"' param!`));
   }
 
-  fs.mkdir(path.join(paths.root, projectDir));
-  fs.mkdir(path.join(paths.root, projectDir, 'src'));
+  fs.mkdirSync(path.join(paths.root, projectDir));
+  fs.mkdirSync(path.join(paths.root, projectDir, 'src'));
 
   resolve();
 }
