@@ -20,7 +20,7 @@ function watch() {
 
   // Copy task files
   watchers.copy
-      .on('all', debounce(gulp.series('compile-js'), 200));
+      .on('all', debounce(gulp.series('copy'), 200));
 
   // Dist file upload
   watchers.claspPush
@@ -28,4 +28,4 @@ function watch() {
 }
 
 // NOTE: Main task
-gulp.task('watch', watch);
+gulp.task('watch', gulp.series('build', watch));
