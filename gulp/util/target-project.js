@@ -1,20 +1,15 @@
 const fs = require('fs');
-const fancyLog = require('fancy-log');
-const PluginError = require('plugin-error');
 
 const paths = require('../config/paths');
+const { throwPluginError } = require('./throw-plugin-error');
 
-const targetProjectExists = exports.targetProjectExists = fs.existsSync(paths.src);
-
-const throwPluginError = exports.throwPluginError = function(pluginName, error) {
-  throw new PluginError('google-app-script-template', error, { showStack: true });
-}
+const targetProjectExists = fs.existsSync(paths.src);
 
 exports.throwOnInvalidTargetProject = function(taskName) {
   if (targetProjectExists) {
     return;
   }
 
-  throwPluginError(new Error(`You must specify an existing target project with '--project-dir="path/to/projectfolder"' when using this task: '${ taskName }'`));
+  const error = new Error(`You must specify an existing target project with '--project-dir="path/to/projectfolder"' when using this task: '${ taskName }'`);
+  throwPluginError(error);
 };
-
