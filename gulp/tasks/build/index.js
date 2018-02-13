@@ -5,13 +5,14 @@ const paths = require('../../config/paths');
 const projects = require('../../config/projects');
 const { throwOnNoRegisteredProjects } = require('../../util/registered-projects');
 
-// NOTE: Inits a full build
+// NOTE: Init a full build
 gulp.task('build', gulp.series(
     'clean',
     gulp.parallel('compile-js', 'copy'),
     'clasp-push',
 ));
 
+// NOTE: Init a full build for all projects
 gulp.task('build:all', function(done) {
   throwOnNoRegisteredProjects('build:all');
 
