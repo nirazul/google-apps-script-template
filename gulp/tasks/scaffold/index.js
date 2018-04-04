@@ -5,7 +5,7 @@ const fancyLog = require('fancy-log');
 
 const paths = require('../../config/paths');
 const { 'project-dir': projectDir } = require('../../util/args');
-const { throwPluginError } = require('../../util/target-project');
+const { throwPluginError } = require('../../util/throw-plugin-error');
 
 /**
  * Give additional information to the available tasks
@@ -13,7 +13,7 @@ const { throwPluginError } = require('../../util/target-project');
  */
 function scaffold(resolve) {
   if (!projectDir) {
-    throwPluginError('scaffold', new Error(`You must specify the project name via the '--project-dir="path/to/projectfolder"' param!`));
+    throwPluginError(new Error(`You must specify the project name via the '--project-dir="path/to/projectfolder"' param!`));
   }
 
   fs.mkdirSync(path.join(paths.root, projectDir));
