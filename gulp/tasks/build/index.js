@@ -8,7 +8,7 @@ const { throwOnNoRegisteredProjects } = require('../../util/registered-projects'
 // NOTE: Init a full build
 gulp.task('build', gulp.series(
     'clean',
-    gulp.parallel('compile-js', 'copy'),
+    gulp.parallel('compile-js:dirty', 'copy:dirty'),
     'clasp-push',
 ));
 

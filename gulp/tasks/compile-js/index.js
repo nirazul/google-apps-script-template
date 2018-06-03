@@ -21,5 +21,11 @@ function compileJs(resolve) {
       .pipe(gulp.dest(config.dest.path));
 }
 
-// NOTE: Invoke help task
-gulp.task('compile-js', compileJs);
+// NOTE: Alias for `compile-js:clean`
+gulp.task('compile-js', gulp.series('compile-js:clean'));
+
+// NOTE: Run main task, after cleaning up older files
+gulp.task('compile-js:clean', gulp.series('clean:compile-js', 'compile-js:dirty'));
+
+// NOTE: Main task
+gulp.task('compile-js:dirty', compileJs);
