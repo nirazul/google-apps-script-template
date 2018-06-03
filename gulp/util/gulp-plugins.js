@@ -1,5 +1,5 @@
 const config = {
-  lazy: true,
+    lazy: true,
 };
 
 module.exports = require('gulp-load-plugins')(config);

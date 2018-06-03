@@ -1,5 +1,5 @@
 const types = {
-  LOCAL: 'local',
+    LOCAL: 'local',
 };
 
 exports.name = types.LOCAL;

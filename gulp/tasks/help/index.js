@@ -5,8 +5,8 @@ const gulp = require('gulp');
  * @param {Function} resolve - A completion indicator callback
  */
 function help(resolve) {
-  console.log('Please use `gulp --tasks` for a list of all available tasks!');
-  resolve();
+    console.log('Please use `gulp --tasks` for a list of all available tasks!');
+    resolve();
 }
 
 // NOTE: Invoke help task

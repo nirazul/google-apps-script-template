@@ -6,6 +6,7 @@ const env = require('../../util/env');
 const { throwOnInvalidTargetProject } = require('../../util/target-project');
 const paths = require('../../config/paths');
 const taskConfigs = require('../../config/task-configs');
+const { compileGlobs } = require('./helpers');
 
 const TYPES = ['compileJs', 'copy'];
 
@@ -15,24 +16,24 @@ const TYPES = ['compileJs', 'copy'];
  * @return {Function} A completion callback that is invoked after the delete is finished
  */
 function clean(type) {
-  let delPath;
-  const delConfig = { force: true };
+    let delPath;
+    const delConfig = { force: true };
 
-  throwOnInvalidTargetProject('clean');
+    throwOnInvalidTargetProject('clean');
 
-  switch (type) {
-    case 'compileJs':
-      delPath = taskConfigs[type].dest.path;
-      break;
-    case 'copy':
-      delPath = taskConfigs[type].dest.path;
-      break;
-    default:
-      delPath = [paths.dest];
-      break;
-  }
+    switch (type) {
+        case 'compileJs':
+            delPath = compileGlobs(taskConfigs[type].dest);
+            break;
+        case 'copy':
+            delPath = compileGlobs(taskConfigs[type].dest);
+            break;
+        default:
+            delPath = [paths.dest];
+            break;
+    }
 
-  return del(delPath, delConfig);
+    return del(delPath, delConfig);
 }
 
 // NOTE: Register task for cleaning everything
@@ -40,5 +41,5 @@ gulp.task('clean', () => clean());
 
 // NOTE: Register all subtasks for cleaning folders
 TYPES.forEach(type => {
-  gulp.task(`clean:${ type }`, () => clean(type));
+    gulp.task(`clean:${ type }`, () => clean(type));
 });

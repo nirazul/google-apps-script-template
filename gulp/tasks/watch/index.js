@@ -14,30 +14,30 @@ const { throwOnInvalidTargetProject } = require('../../util/target-project');
  * Add file watchers for all tasks
  */
 function watch() {
-  throwOnInvalidTargetProject('watch');
+    throwOnInvalidTargetProject('watch');
 
-  const watchers = createFileWatchers({ claspPush, compileJs, copy });
+    const watchers = createFileWatchers({ claspPush, compileJs, copy });
 
-  // Javascript task files
-  watchers.compileJs.on('all', debounce(gulp.series('compile-js'), 200));
+    // Javascript task files
+    watchers.compileJs.on('all', debounce(gulp.series('compile-js'), 200));
 
-  // Copy task files
-  watchers.copy.on('all', debounce(gulp.series('copy'), 200));
+    // Copy task files
+    watchers.copy.on('all', debounce(gulp.series('copy'), 200));
 
-  // Dist file upload
-  watchers.claspPush.on('all', debounce(gulp.series('clasp-push'), 1000));
+    // Dist file upload
+    watchers.claspPush.on('all', debounce(gulp.series('clasp-push'), 1000));
 }
 
 /**
  * Start file watchers for all registered projects
  */
 function watchAll() {
-  throwOnNoRegisteredProjects('watch:all');
+    throwOnNoRegisteredProjects('watch:all');
 
-  projects.forEach(project => spawn('gulp', ['watch:only', '--project-dir', project], {
-    cwd: paths.root,
-    stdio: 'inherit',
-  }));
+    projects.forEach(project => spawn('gulp', ['watch:only', '--project-dir', project], {
+        cwd: paths.root,
+        stdio: 'inherit',
+    }));
 }
 
 // NOTE: Main task
