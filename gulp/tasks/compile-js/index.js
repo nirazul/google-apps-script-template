@@ -25,7 +25,7 @@ function compileJs(resolve) {
 gulp.task('compile-js', gulp.series('compile-js:clean'));
 
 // NOTE: Run main task, after cleaning up older files
-gulp.task('compile-js:clean', gulp.series('clean:compile-js', 'compile-js:dirty'));
+gulp.task('compile-js:clean', gulp.series('clean:compileJs', 'compile-js:dirty'));
 
 // NOTE: Main task
 gulp.task('compile-js:dirty', compileJs);
