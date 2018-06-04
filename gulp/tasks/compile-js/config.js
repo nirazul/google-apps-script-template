@@ -12,5 +12,7 @@ const src = exports.src = {
 
 exports.dest = {
     path: paths.dest,
-    globs: src.globs,
+    globs: [
+        '**/*.gs',
+    ],
 };
