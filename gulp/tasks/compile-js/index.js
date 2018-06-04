@@ -1,10 +1,9 @@
 const gulp = require('gulp');
-const gulpBabel = require('gulp-babel');
-const gulpTap = require('gulp-tap');
-const { babel, revertPath, tap } = require('../../util/gulp-plugins');
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config');
+const { outputBundlerStats } = require('./helpers');
 
 const { throwOnInvalidTargetProject } = require('../../util/target-project');
-const plumberPipe = require('../../pipes/plumber');
 const config = require('./config');
 
 /**
@@ -14,11 +13,11 @@ const config = require('./config');
 function compileJs(resolve) {
     throwOnInvalidTargetProject('compile-js');
 
-    return gulp.src(config.src.globs, config.src.options)
-        .pipe(plumberPipe())
-        .pipe(babel())
-        .pipe(revertPath())
-        .pipe(gulp.dest(config.dest.path));
+    const compiler = webpack(webpackConfig);
+    compiler.run((error, stats) => {
+        outputBundlerStats(error, stats);
+        resolve();
+    });
 }
 
 // NOTE: Alias for `compile-js:clean`
