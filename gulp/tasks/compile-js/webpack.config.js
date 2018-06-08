@@ -6,10 +6,8 @@ const paths = require('../../config/paths');
 
 module.exports = {
     entry: {
+        Polyfills: 'polyfills/Index.gs',
         App: path.join(config.src.options.cwd, 'Index.gs'),
-    },
-    externals: {
-        HarvestExport: 'HarvestExport',
     },
     mode: 'production',
     module: {
@@ -40,7 +38,8 @@ module.exports = {
     ],
     resolve: {
         modules: [
-            path.resolve(paths.root, 'Projects'),
+            'node_modules',
+            path.resolve(paths.root, 'projects'),
         ],
     },
 };

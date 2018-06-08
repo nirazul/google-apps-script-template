@@ -1,1 +1,3 @@
-module.exports = [];
+module.exports = [
+    'projects/sample-project',
+];
