@@ -13,7 +13,9 @@
     "url": "https://github.com/Nirazul/google-app-script-template/issues"
   },
   "homepage": "https://github.com/Nirazul/google-app-script-template#readme",
-  "dependencies": {},
+  "dependencies": {
+    "core-js": "^2.5.5"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
