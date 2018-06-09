@@ -13,7 +13,7 @@ exports.outputBundlerStats = function(error, stats) {
     const info = stats.toJson();
 
     if (stats.hasErrors()) {
-        throw new Error(info.errors[0]);
+        throw Error(info.errors[0]);
     }
 
     if (stats.hasWarnings()) {
