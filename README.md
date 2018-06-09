@@ -1,6 +1,7 @@
-# google-app-script-template
+# google-apps-script-template
 This repository is intended to be a starting point for javascript projects used in scriptable Google Cloud Apps.
 It tries to solve the most common tasks when creating and maintaining code for the Google Apps Script environment.
+
 
 ## Usage
 
@@ -23,20 +24,23 @@ It tries to solve the most common tasks when creating and maintaining code for t
    # Or clone an existing project by providing a script id
    gulp scaffold --project-dir="projects/example" --script-id="{scriptId}"
 
-1. You're ready to go! You can build or watch a project or execute a sub task
+1. You're ready to go! You can build or watch a project or execute a sub task (see next section).
+   These are most common tasks you will likely use: 
    ```bash
-   # Build the project files
+   
+   # Build a project:
    gulp build --project-dir="projects/example"
+
+   # Build all projects
+   gulp build:all
    
    # Watch a project
    gulp watch --project-dir="projects/example"
-   
-   # Execute on of the sub tasks
-   gulp clean --project-dir="projects/example"
-   gulp compile-js --project-dir="projects/example"
-   gulp copy --project-dir="projects/example"
-   gulp clasp-push --project-dir="projects/example"
+
+   # Watch all projects
+   gulp watch:all
    ```
+
 
 ## Tasks
 
@@ -81,3 +85,6 @@ Create a new clasp project
 
 ### `watch`
 Watch a project folder and recompile/push on changes
+
+
+## Features
