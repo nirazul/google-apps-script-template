@@ -121,7 +121,26 @@ Watch all project folders
 
 ## Features
 
-- Babel
+### Babel
+Code is being transpiled via `babel` so you can write es20XX and not think about the consequences.
+
+### Webpack
+GAS code is global by default. As javascript developers are *terrible* at modules and stuff, 
+this problem has been solved by webpack long ago, so that you can organize your code with `module.export` and `require` 
+
+### Eslint
+There is a ton of stuff that you can and will write wrong. `eslint` is there to help and annoy you to death.
+
+### Core-js
+As you might know, GAS code is ES3 enhanced with random features from the generations afterwards. 
+It's not that horrible, but annoying enough to be annoyed. 
+This template provides `core-js` as a module and a polyfill entry point. 
+<br>
+Adding a polyfill is as easy as adding a line of javascript: `require('core-js/modules/es6.array.is-array');`
+
+
+
+- Babel transpiling
 - Webpack
 - Eslint
 - Core-js
