@@ -54,37 +54,74 @@ Some tasks have an additional flavour to execute them on all currently registere
 All projects that are created with `gulp scaffold` are added automatically on this list located at 
 `gulp/config/projects.json`.
 
-### `gulp build`
+### Build
 
-#### `gulp build --project-dir="projects/example"`
-Compile a project and push the distribution files via clasp cli
+#### Build one
+Compile a single project and push the distribution files via clasp cli
+<br>
+**Example:** `gulp build --project-dir="projects/example"`
 
-#### `gulp build:all`
-Execute the build step for all registered projects. 
+#### Build all 
+Execute the build step for all registered projects.
+<br>
+**Example:** `gulp build:all` 
 
-### `gulp clasp-push`
+### Push
 Update the remote files with the distribution files
+<br>
+**Example:** `gulp clasp-push --project-dir="projects/example"`
 
-### `gulp clean`
+### Clean
 Remove the files that have been produced by other tasks
+<br>
+**Example:** `gulp clean --project-dir="projects/example"`
 
-#### `gulp clean:compileJs`
+#### Clean js files
 Remove only the files that have been created by the `compile-js` task
+<br>
+**Example:** `gulp clean:compileJs --project-dir="projects/example"`
 
-#### `gulp clean:copy`
-Remove only the files that have been created by the `copy` task. 
+#### Clean copied files
+Remove only the files that have been created by the `copy` task.
+<br>
+**Example:** `gulp clean:copy --project-dir="projects/example"` 
 
-### `gulp copy`
+### Copy
 Copy over config files like `.claspignore` or `appsscript.json`
+<br>
+**Example:** `gulp copy --project-dir="projects/example"`
 
-### `lint-js`
+### Lint js files
 Lint project files with `eslint`
+<br>
+**Example:** `gulp lint-js --project-dir="projects/example"`
 
-### `scaffold`
+### Scaffold a new project
 Create a new clasp project
+<br>
+**Example:** `gulp scaffold --project-dir="projects/example"`
 
-### `watch`
-Watch a project folder and recompile/push on changes
+### Scaffold an existing project
+Create a clasp project from an existing remote source
+<br>
+**Example:** `gulp scaffold --project-dir="projects/example" --script-id="{scriptId}"`
+
+### Watch
+
+#### Watch one
+Watch a single project folder and recompile/push on changes
+<br>
+**Example**: `gulp watch --project-dir="projects/example"`
+
+#### Watch all
+Watch all project folders
+<br>
+**Example**: `gulp watch:all`
 
 
 ## Features
+
+- Babel
+- Webpack
+- Eslint
+- Core-js
