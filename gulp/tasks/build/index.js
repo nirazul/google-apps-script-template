@@ -4,6 +4,7 @@ const { spawn } = require('child_process');
 const paths = require('../../config/paths');
 const projects = require('../../config/projects');
 const { throwOnNoRegisteredProjects } = require('../../util/registered-projects');
+const { onClose } = require('../../util/handle-child-process');
 
 // NOTE: Init a full build
 gulp.task('build', gulp.series(
@@ -22,13 +23,7 @@ gulp.task('build:all', function(done) {
             stdio: 'inherit',
         });
 
-        child.on('close', code => {
-            if (!code) {
-                resolve();
-            } else {
-                reject(code);
-            }
-        });
+        onClose(child, resolve, reject);
     }));
 
     return promises.reduce((acc, promise) => acc.then(promise), Promise.resolve());

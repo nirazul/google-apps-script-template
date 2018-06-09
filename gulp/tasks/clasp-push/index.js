@@ -29,5 +29,5 @@ function claspPush(resolve) {
     });
 }
 
-// NOTE: Invoke help task
+// NOTE: Main task
 gulp.task('clasp-push', claspPush);
