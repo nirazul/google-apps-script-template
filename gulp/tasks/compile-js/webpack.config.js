@@ -5,11 +5,12 @@ const paths = require('../../config/paths');
 
 
 module.exports = {
+    devtool: false,
     entry: {
         Polyfills: 'polyfills/Index.gs',
         App: path.join(config.src.options.cwd, 'Index.gs'),
     },
-    mode: 'production',
+    mode: 'development',
     module: {
         rules: [
             {
@@ -31,7 +32,7 @@ module.exports = {
     },
     output: {
         path: config.dest.path,
-        filename: '[name].gs',
+        filename: '[name].js',
     },
     plugins: [
         new GasWebpackPlugin(),
