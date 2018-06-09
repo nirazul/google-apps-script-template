@@ -1,8 +1,10 @@
 root = true
 
-[{.*rc,.*rc.js,package.json,package-lock.json,.travis.yml}]
+[{.*rc,.*rc.js,package.json,package-lock.json,.travis.yml,*.gs}]
 indent_style = space
 indent_size = 2
+
+[{.*rc,.*rc.js,package.json,package-lock.json,.travis.yml}]
 insert_final_newline = false
 
 [{*.gs}]
