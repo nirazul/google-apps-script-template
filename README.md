@@ -51,7 +51,7 @@ Most tasks need a `--project-dir` argument to work properly. It defines, on whic
 
 #### About `{task}:all` tasks
 Some tasks have an additional flavour to execute them on all currently registered projects.
-All projects that are created with `gulp scaffold` are added automatically on this list located at 
+All projects that are created with `gulp scaffold` are added automatically to this list located at 
 `gulp/config/projects.json`.
 
 ### Build
