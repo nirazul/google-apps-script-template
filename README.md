@@ -25,7 +25,7 @@ It tries to solve the most common tasks when creating and maintaining code for t
    gulp scaffold --project-dir="projects/example" --script-id="{scriptId}"
 
 1. You're ready to go! You can build or watch a project or execute a sub task (see next section).
-   These are most common tasks you will likely use: 
+   These are the most common tasks you will likely use: 
    ```bash
    
    # Build a project:
