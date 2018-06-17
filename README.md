@@ -121,6 +121,9 @@ Watch all project folders
 
 ## Features
 
+### Clasp
+Manage your GAS code locally in the dev environment you need to be productive!
+
 ### Babel
 Code is being transpiled via `babel` so you can write es20XX and not think about the consequences.
 

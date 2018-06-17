@@ -38,6 +38,7 @@ module.exports = {
         new GasWebpackPlugin(),
     ],
     resolve: {
+        extensions: ['*', '.js', '.gs'],
         modules: [
             'node_modules',
             path.resolve(paths.root, 'projects'),
