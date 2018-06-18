@@ -140,10 +140,3 @@ It's not that horrible, but annoying enough to be annoyed.
 This template provides `core-js` as a module and a polyfill entry point. 
 <br>
 Adding a polyfill is as easy as adding a line of javascript: `require('core-js/modules/es6.array.is-array');`
-
-
-
-- Babel transpiling
-- Webpack
-- Eslint
-- Core-js
