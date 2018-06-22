@@ -6,6 +6,31 @@ const paths = require('../../config/paths');
 const { 'project-dir': projectDir, 'script-id': scriptId } = require('../../util/args');
 const { onClose } = require('../../util/handle-child-process');
 
+/**
+ * Implement a nested directory structure
+ * @link https://stackoverflow.com/a/40686853/1602864
+ *
+ * @param {str} targetDir - A relative path to the target directory
+ * @param {str} baseDir - The root directory from which to build the path
+ */
+function createNestedDir(targetDir, baseDir) {
+    const { isAbsolute, sep } = path;
+    const initDir = path.relative(baseDir, targetDir);
+
+    initDir.split(sep).reduce((parentDir, childDir) => {
+        const curDir = path.resolve(parentDir, childDir);
+
+        try {
+            fs.mkdirSync(curDir);
+        } catch (err) {
+            if (err.code !== 'EEXIST') {
+                throw err;
+            }
+        }
+
+        return curDir;
+    }, baseDir);
+}
 
 /**
  * Create a new clasp project
@@ -47,7 +72,7 @@ exports.addToProjects = function() {
 
         fs.writeFileSync(
             paths.projects,
-            JSON.stringify([...list, projectDir]),
+            JSON.stringify([...new Set([...list, projectDir])]),
         );
 
         resolve();
@@ -60,11 +85,8 @@ exports.addToProjects = function() {
  */
 exports.makeProjectFolder = function() {
     return new Promise((resolve, reject) => {
-        const projectPath = path.join(paths.root, projectDir);
-
-        fs.mkdirSync(projectPath);
-        fs.mkdirSync(path.join(projectPath, 'src'));
-
+        const projectPath = path.join(paths.root, projectDir, 'src');
+        createNestedDir(path.join(projectPath, paths.root));
         resolve();
     });
 };
