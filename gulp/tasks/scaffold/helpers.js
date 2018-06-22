@@ -67,11 +67,11 @@ function cloneClaspProject() {
  */
 exports.addToProjects = function() {
     return new Promise((resolve, reject) => {
-        const file = fs.readFileSync(paths.projects);
+        const file = fs.readFileSync(paths.projectDirs);
         const list = JSON.parse(file);
 
         fs.writeFileSync(
-            paths.projects,
+            paths.projectDirs,
             JSON.stringify([...new Set([...list, projectDir])]),
         );
 
