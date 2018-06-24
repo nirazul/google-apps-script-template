@@ -34,7 +34,7 @@ function createNestedDir(targetDir, baseDir) {
 
 /**
  * Create a new clasp project
- * @return {Promise} - A promise indicating completion
+ * @return {Promise} A promise indicating completion
  */
 function createClaspProject() {
     return new Promise((resolve, reject) => {
@@ -49,7 +49,7 @@ function createClaspProject() {
 
 /**
  * Clone an existing clasp project
- * @return {Promise} - A promise indicating completion
+ * @return {Promise} A promise indicating completion
  */
 function cloneClaspProject() {
     return new Promise((resolve, reject) => {

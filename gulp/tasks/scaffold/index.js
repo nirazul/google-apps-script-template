@@ -6,7 +6,7 @@ const { addToProjects, makeProjectFolder, provideClaspProject } = require('./hel
 
 /**
  * Give additional information to the available tasks
- * @return {Promise} - A promise indicating completion
+ * @return {Promise} A promise indicating completion
  */
 function scaffold() {
     if (!projectDir) {
