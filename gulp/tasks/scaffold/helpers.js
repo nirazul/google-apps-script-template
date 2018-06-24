@@ -14,7 +14,7 @@ const { onClose } = require('../../util/handle-child-process');
  * @param {str} baseDir - The root directory from which to build the path
  */
 function createNestedDir(targetDir, baseDir) {
-    const { isAbsolute, sep } = path;
+    const { sep } = path;
     const initDir = path.relative(baseDir, targetDir);
 
     initDir.split(sep).reduce((parentDir, childDir) => {
@@ -34,6 +34,7 @@ function createNestedDir(targetDir, baseDir) {
 
 /**
  * Create a new clasp project
+ * @return {Promise} - A promise indicating completion
  */
 function createClaspProject() {
     return new Promise((resolve, reject) => {
@@ -48,6 +49,7 @@ function createClaspProject() {
 
 /**
  * Clone an existing clasp project
+ * @return {Promise} - A promise indicating completion
  */
 function cloneClaspProject() {
     return new Promise((resolve, reject) => {
@@ -60,13 +62,12 @@ function cloneClaspProject() {
     });
 }
 
-
 /**
  * Add a project name to the list of projects
  * @return {Promise} A promise indicating success/failure of the action
  */
 exports.addToProjects = function() {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
         const file = fs.readFileSync(paths.projectDirs);
         const list = JSON.parse(file);
 
@@ -84,7 +85,7 @@ exports.addToProjects = function() {
  * @return {Promise} A promise indicating success/failure of the action
  */
 exports.makeProjectFolder = function() {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
         const projectPath = path.join(paths.root, projectDir, 'src');
         createNestedDir(path.join(projectPath, paths.root));
         resolve();
@@ -98,7 +99,7 @@ exports.makeProjectFolder = function() {
 exports.provideClaspProject = function() {
     if (scriptId) {
         return cloneClaspProject();
-    } else {
-        return createClaspProject();
     }
+
+    return createClaspProject();
 };

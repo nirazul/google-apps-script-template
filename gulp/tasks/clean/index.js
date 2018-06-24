@@ -1,8 +1,6 @@
-const path = require('path');
 const gulp = require('gulp');
 const del = require('del');
 
-const env = require('../../util/env');
 const { throwOnInvalidTargetProject } = require('../../util/target-project');
 const paths = require('../../config/paths');
 const taskConfigs = require('../../config/task-configs');

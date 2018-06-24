@@ -1,5 +1,3 @@
-const path = require('path');
-
 const paths = require('../../config/paths');
 const copy = require('../../tasks/copy/config');
 

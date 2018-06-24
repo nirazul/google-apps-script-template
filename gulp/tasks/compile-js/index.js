@@ -4,7 +4,6 @@ const webpackConfig = require('./webpack.config');
 const { outputBundlerStats } = require('./helpers');
 
 const { throwOnInvalidTargetProject } = require('../../util/target-project');
-const config = require('./config');
 
 /**
  * Give additional information to the available tasks

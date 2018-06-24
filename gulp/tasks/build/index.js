@@ -14,7 +14,7 @@ gulp.task('build', gulp.series(
 ));
 
 // NOTE: Init a full build for all projects
-gulp.task('build:all', function(done) {
+gulp.task('build:all', function() {
     throwOnNoRegisteredProjects('build:all');
 
     const promises = projects.map(project => () => new Promise((resolve, reject) => {

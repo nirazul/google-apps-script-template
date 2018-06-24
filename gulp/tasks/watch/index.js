@@ -1,4 +1,3 @@
-const path = require('path');
 const gulp = require('gulp');
 const { spawn } = require('child_process');
 const { debounce } = require('lodash');

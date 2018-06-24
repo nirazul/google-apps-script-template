@@ -2,7 +2,9 @@
   "name": "google-app-script-template",
   "version": "1.0.0",
   "description": "A starting point for google apps script projects for transpilation, editing and deployment",
-  "scripts": {},
+  "scripts": {
+    "lint:taskrunner": "npx eslint -c gulp/.eslintrc.js --no-eslintrc gulp"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nirazul/google-app-script-template.git"
@@ -17,6 +19,7 @@
     "core-js": "^2.5.5"
   },
   "devDependencies": {
+    "@dreipol/eslint-config": "^4.1.1",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",

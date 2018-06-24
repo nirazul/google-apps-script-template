@@ -1,10 +1,5 @@
 const gulp = require('gulp');
 const { mapValues } = require('lodash');
-const spawn = require('child_process').spawn;
-
-const paths = require('../../config/paths');
-const env = require('../../util/env');
-
 
 /**
  * Use `gulp.watch` to create a `chokidar` watcher instance

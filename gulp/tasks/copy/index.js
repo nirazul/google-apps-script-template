@@ -5,9 +5,9 @@ const config = require('./config');
 
 /**
  * Give additional information to the available tasks
- * @param {Function} resolve - A completion indicator callback
+ * @return {Stream} A gulp stream
  */
-function copy(resolve) {
+function copy() {
     return gulp.src(config.src.globs, config.src.options)
         .pipe(plumberPipe())
         .pipe(gulp.dest(config.dest.path));

@@ -1,5 +1,9 @@
 root = true
 
+[gulp/**.js]
+indent_style = space
+indent_size = 4
+
 [{.*rc,.*rc.js,package.json,package-lock.json,.travis.yml,*.gs}]
 indent_style = space
 indent_size = 2

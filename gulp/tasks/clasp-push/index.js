@@ -21,10 +21,10 @@ function claspPush(resolve) {
     });
 
     child.on('close', function(code) {
-        if (!code) {
-            resolve();
-        } else {
+        if (code) {
             throw Error(code);
+        } else {
+            resolve();
         }
     });
 }

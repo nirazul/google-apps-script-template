@@ -1,18 +1,17 @@
-const path = require('path');
 const gulp = require('gulp');
 
-const paths = require('../../config/paths');
 const { 'project-dir': projectDir } = require('../../util/args');
 const { throwPluginError } = require('../../util/throw-plugin-error');
 const { addToProjects, makeProjectFolder, provideClaspProject } = require('./helpers');
 
 /**
  * Give additional information to the available tasks
- * @param {Function} resolve - A completion indicator callback
+ * @return {Promise} - A promise indicating completion
  */
-function scaffold(resolve) {
+function scaffold() {
     if (!projectDir) {
-        throwPluginError(new Error(`You must specify the project name via the '--project-dir="path/to/projectfolder"' param!`));
+        const message = `You must specify the project name via the '--project-dir="path/to/projectfolder"' param!`;
+        throwPluginError(new Error(message));
     }
 
     const promises = [makeProjectFolder, provideClaspProject, addToProjects];

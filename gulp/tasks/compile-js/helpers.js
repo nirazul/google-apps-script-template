@@ -11,7 +11,7 @@ const fancyLog = require('fancy-log');
  */
 exports.getSourceRelativeDir = function({ root, src }, dir) {
     return path.relative(src, path.join(root, dir));
-}
+};
 
 /**
  * Output errors that come from the webpack bundler
