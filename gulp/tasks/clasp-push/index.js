@@ -3,7 +3,7 @@ const gulp = require('gulp');
 const fancyLog = require('fancy-log');
 
 const { 'project-dir': projectDir } = require('../../util/args');
-const { throwOnInvalidTargetProject } = require('../../util/target-project');
+const { throwOnMissingTargetProjectArgument, throwOnInexistentTargetProject } = require('../../util/target-project');
 const config = require('./config');
 
 /**
@@ -11,7 +11,8 @@ const config = require('./config');
  * @param {Function} resolve - A completion indicator callback
  */
 function claspPush(resolve) {
-    throwOnInvalidTargetProject('clasp-push');
+    throwOnMissingTargetProjectArgument('clasp-push');
+    throwOnInexistentTargetProject('clasp-push');
 
     fancyLog(`Updating project "${ projectDir }"`);
 

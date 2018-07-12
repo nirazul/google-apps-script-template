@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const del = require('del');
 
-const { throwOnInvalidTargetProject } = require('../../util/target-project');
+const { throwOnMissingTargetProjectArgument, throwOnInexistentTargetProject } = require('../../util/target-project');
 const paths = require('../../config/paths');
 const taskConfigs = require('../../config/task-configs');
 const { compileGlobs } = require('./helpers');
@@ -14,10 +14,11 @@ const TYPES = ['compileJs', 'copy'];
  * @return {Function} A completion callback that is invoked after the delete is finished
  */
 function clean(type) {
+    throwOnMissingTargetProjectArgument('clean');
+    throwOnInexistentTargetProject('clean');
+
     let delPath;
     const delConfig = { force: true };
-
-    throwOnInvalidTargetProject('clean');
 
     switch (type) {
         case 'compileJs':

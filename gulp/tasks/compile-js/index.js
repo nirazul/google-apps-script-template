@@ -3,14 +3,15 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config');
 const { outputBundlerStats } = require('./helpers');
 
-const { throwOnInvalidTargetProject } = require('../../util/target-project');
+const { throwOnMissingTargetProjectArgument, throwOnInexistentTargetProject } = require('../../util/target-project');
 
 /**
  * Give additional information to the available tasks
  * @param {Function} resolve - A completion indicator callback
  */
 function compileJs(resolve) {
-    throwOnInvalidTargetProject('compile-js');
+    throwOnMissingTargetProjectArgument('compile-js');
+    throwOnInexistentTargetProject('compile-js');
 
     const compiler = webpack(webpackConfig);
     compiler.run((error, stats) => {
@@ -26,4 +27,4 @@ gulp.task('compile-js', gulp.series('compile-js:clean'));
 gulp.task('compile-js:clean', gulp.series('clean:compileJs', 'compile-js:dirty'));
 
 // NOTE: Main task
-gulp.task('compile-js:dirty', compileJs);
+gulp.task('compile-js:dirty', gulp.series('lint-js', compileJs));

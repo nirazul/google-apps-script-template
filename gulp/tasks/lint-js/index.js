@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const gulpEslint = require('gulp-eslint');
 
+const { throwOnMissingTargetProjectArgument, throwOnInexistentTargetProject } = require('../../util/target-project');
 const compileJsConfig = require('../compile-js/config');
 const plumberPipe = require('../../pipes/plumber');
 const createEslintReportPipe = require('./pipes/create-eslint-report');
@@ -12,6 +13,9 @@ const createEslintReportPipe = require('./pipes/create-eslint-report');
  * @return {Stream} A gulp stream
  */
 function lintJs(resolve) {
+    throwOnMissingTargetProjectArgument('lint-js');
+    throwOnInexistentTargetProject('lint-js');
+
     return gulp.src(compileJsConfig.src.globs, compileJsConfig.src.options)
         .pipe(plumberPipe())
         .pipe(gulpEslint())

@@ -7,13 +7,14 @@ const paths = require('../../config/paths');
 const projects = require('../../config/projects');
 const { claspPush, compileJs, copy } = require('../../config/task-configs');
 const { throwOnNoRegisteredProjects } = require('../../util/registered-projects');
-const { throwOnInvalidTargetProject } = require('../../util/target-project');
+const { throwOnMissingTargetProjectArgument, throwOnInexistentTargetProject } = require('../../util/target-project');
 
 /**
  * Add file watchers for all tasks
  */
 function watch() {
-    throwOnInvalidTargetProject('watch');
+    throwOnMissingTargetProjectArgument('watch');
+    throwOnInexistentTargetProject('watch');
 
     const watchers = createFileWatchers({ claspPush, compileJs, copy });
 

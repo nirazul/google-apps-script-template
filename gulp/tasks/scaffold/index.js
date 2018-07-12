@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 
 const { 'project-dir': projectDir } = require('../../util/args');
-const { throwPluginError } = require('../../util/throw-plugin-error');
+const { throwOnMissingTargetProjectArgument } = require('../../util/target-project');
 const { addToProjects, makeProjectFolder, provideClaspProject } = require('./helpers');
 
 /**
@@ -9,10 +9,7 @@ const { addToProjects, makeProjectFolder, provideClaspProject } = require('./hel
  * @return {Promise} A promise indicating completion
  */
 function scaffold() {
-    if (!projectDir) {
-        const message = `You must specify the project name via the '--project-dir="path/to/projectfolder"' param!`;
-        throwPluginError(new Error(message));
-    }
+    throwOnMissingTargetProjectArgument('scaffold');
 
     const promises = [makeProjectFolder, provideClaspProject, addToProjects];
     return promises.reduce((acc, promise) => acc.then(promise), Promise.resolve());

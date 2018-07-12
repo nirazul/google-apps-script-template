@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 
+const { throwOnMissingTargetProjectArgument, throwOnInexistentTargetProject } = require('../../util/target-project');
 const plumberPipe = require('../../pipes/plumber');
 const config = require('./config');
 
@@ -8,6 +9,9 @@ const config = require('./config');
  * @return {Stream} A gulp stream
  */
 function copy() {
+    throwOnMissingTargetProjectArgument('copy');
+    throwOnInexistentTargetProject('copy');
+
     return gulp.src(config.src.globs, config.src.options)
         .pipe(plumberPipe())
         .pipe(gulp.dest(config.dest.path));
