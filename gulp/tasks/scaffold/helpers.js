@@ -15,6 +15,7 @@ const { onClose } = require('../../util/handle-child-process');
  */
 function createNestedDir(targetDir, baseDir) {
     const { sep } = path;
+
     const initDir = path.relative(baseDir, targetDir);
 
     initDir.split(sep).reduce((parentDir, childDir) => {
@@ -87,7 +88,7 @@ exports.addToProjects = function() {
 exports.makeProjectFolder = function() {
     return new Promise(resolve => {
         const projectPath = path.join(paths.root, projectDir, 'src');
-        createNestedDir(path.join(projectPath, paths.root));
+        createNestedDir(projectPath, paths.root);
         resolve();
     });
 };
