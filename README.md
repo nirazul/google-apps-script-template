@@ -7,7 +7,7 @@ It tries to solve the most common tasks when creating and maintaining code for t
 
 1. Install all global and local npm dependencies 
    ```bash
-   npm install -g @google/clasp gulp@4
+   npm install -g @google/clasp gulp-cli
    npm install
    ```
 

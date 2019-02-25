@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const webpack = require('webpack');
-const webpackConfig = require('./webpack.config');
+const webpackConfig = require('../../../.gaslit/webpack-project.config');
 const { outputBundlerStats } = require('./helpers');
 
 const { throwOnMissingTargetProjectArgument, throwOnInexistentTargetProject } = require('../../util/target-project');
