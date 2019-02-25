@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 
-const { 'project-dir': projectDir } = require('../../util/args');
 const { throwOnMissingTargetProjectArgument } = require('../../util/target-project');
 const { addToProjects, makeProjectFolder, provideClaspProject } = require('./helpers');
 
