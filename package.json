@@ -16,15 +16,17 @@
   },
   "homepage": "https://github.com/Nirazul/google-app-script-template#readme",
   "dependencies": {
-    "core-js": "^2.5.5"
+    "core-js": "^2.5.5",
+    "yargs": "^13.2.1"
   },
   "devDependencies": {
-    "@dreipol/eslint-config": "^4.1.1",
+    "@dreipol/eslint-config": "^6.0.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
     "babel-preset-google-apps-script": "0.0.3",
     "del": "^3.0.0",
+    "eslint": "^5.14.1",
     "eslint-plugin-googleappsscript": "^1.0.1",
     "fancy-log": "^1.3.2",
     "gas-webpack-plugin": "^0.3.0",
