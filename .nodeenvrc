@@ -2,9 +2,9 @@
 debug = False
 jobs = 2
 make = make
-node = 8.9.4
-npm = 5
+node = 10.5.0
+npm = 6
 prebuilt = True
 profile = False
-with_npm = False
+with_npm = True
 without_ssl = False
