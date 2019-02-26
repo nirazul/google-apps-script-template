@@ -16,13 +16,13 @@ It tries to solve the most common tasks when creating and maintaining code for t
    clasp login
    ```
 
-1. Scaffold a project
+1. Init a project
    ```bash
-   # Use the scaffolding task to create a new clasp project
-   gulp scaffold --project-dir="projects/example"
+   # Use the init task to create a new clasp project
+   gulp init --project-dir="projects/example"
 
    # Or clone an existing project by providing a script id
-   gulp scaffold --project-dir="projects/example" --script-id="{scriptId}"
+   gulp init --project-dir="projects/example" --script-id="{scriptId}"
 
 1. You're ready to go! You can build or watch a project or execute a sub task (see next section).
    These are the most common tasks you will likely use: 
@@ -51,7 +51,7 @@ Most tasks need a `--project-dir` argument to work properly. It defines, on whic
 
 #### About `{task}:all` tasks
 Some tasks have an additional flavour to execute them on all currently registered projects.
-All projects that are created with `gulp scaffold` are added automatically to this list located at 
+All projects that are created with `gulp init` are added automatically to this list located at 
 `gulp/config/projects.json`.
 
 ### Build
@@ -96,15 +96,15 @@ Lint project files with `eslint`
 <br>
 **Example:** `gulp lint-js --project-dir="projects/example"`
 
-### Scaffold a new project
+### Initiate a new project
 Create a new clasp project
 <br>
-**Example:** `gulp scaffold --project-dir="projects/example"`
+**Example:** `gulp init --project-dir="projects/example"`
 
-### Scaffold an existing project
+### Initiate an existing project
 Create a clasp project from an existing remote source
 <br>
-**Example:** `gulp scaffold --project-dir="projects/example" --script-id="{scriptId}"`
+**Example:** `gulp init --project-dir="projects/example" --script-id="{scriptId}"`
 
 ### Watch
 
