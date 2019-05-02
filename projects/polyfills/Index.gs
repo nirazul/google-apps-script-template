@@ -1,8 +1,11 @@
-require('core-js/modules/es6.object.assign');
-require('core-js/modules/es6.object.freeze');
-require('core-js/modules/es6.object.keys');
+// object
+require('core-js/stable/object/assign');
+require('core-js/stable/object/freeze');
+require('core-js/stable/object/keys');
 
-require('core-js/modules/es6.array.is-array');
-require('core-js/modules/es6.array.find');
-require('core-js/modules/es6.array.reduce');
-require('core-js/modules/es6.array.sort');
+// array
+require('core-js/stable/array/is-array');
+require('core-js/stable/array/find');
+require('core-js/stable/array/reduce');
+require('core-js/stable/array/sort');
+require('core-js/stable/array/includes');
