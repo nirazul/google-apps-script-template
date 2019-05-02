@@ -1,6 +1,6 @@
 {
   "name": "google-app-script-template",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A starting point for google apps script projects for transpilation, editing and deployment",
   "scripts": {
     "lint:taskrunner": "npx eslint -c gulp/.eslintrc.js --no-eslintrc gulp"
