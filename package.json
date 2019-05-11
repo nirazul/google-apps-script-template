@@ -1,5 +1,5 @@
 {
-  "name": "google-app-script-template",
+  "name": "google-apps-script-template",
   "version": "2.0.0",
   "description": "A starting point for google apps script projects for transpilation, editing and deployment",
   "scripts": {
@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nirazul/google-app-script-template.git"
+    "url": "git+https://github.com/Nirazul/google-apps-script-template.git"
   },
   "author": "Rouven Bühlmann",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Nirazul/google-app-script-template/issues"
+    "url": "https://github.com/Nirazul/google-apps-script-template/issues"
   },
-  "homepage": "https://github.com/Nirazul/google-app-script-template#readme",
+  "homepage": "https://github.com/Nirazul/google-apps-script-template#readme",
   "dependencies": {
     "core-js": "^3.0.1"
   },
