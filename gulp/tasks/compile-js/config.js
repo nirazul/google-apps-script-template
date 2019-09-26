@@ -5,8 +5,8 @@ const { getSourceRelativeDir } = require('./helpers');
 
 exports.src = {
     globs: [
-        '**/*.gs',
-        path.join(getSourceRelativeDir(paths, 'projects/polyfills'), '**/*.gs'),
+        '**/*.js',
+        path.join(getSourceRelativeDir(paths, 'projects/polyfills'), '**/*.js'),
     ],
     options: {
         cwd: paths.src,
@@ -16,6 +16,6 @@ exports.src = {
 exports.dest = {
     path: paths.dest,
     globs: [
-        '**/*.gs',
+        '**/*.js',
     ],
 };

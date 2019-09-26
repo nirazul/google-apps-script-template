@@ -4,12 +4,12 @@ root = true
 indent_style = space
 indent_size = 4
 
-[{.*rc,.*rc.js,package.json,package-lock.json,.travis.yml,*.gs}]
+[{.*rc,.*rc.js,package.json,package-lock.json,.travis.yml,*.js}]
 indent_style = space
 indent_size = 2
 
 [{.*rc,.*rc.js,package.json,package-lock.json,.travis.yml}]
 insert_final_newline = false
 
-[{*.gs}]
+[*.js]
 insert_final_newline = true

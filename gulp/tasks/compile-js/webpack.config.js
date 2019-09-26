@@ -7,14 +7,14 @@ const paths = require('../../config/paths');
 module.exports = {
     devtool: false,
     entry: {
-        Polyfills: 'polyfills/Index.gs',
-        App: path.join(config.src.options.cwd, 'Index.gs'),
+        polyfills: 'polyfills/index.js',
+        app: path.join(config.src.options.cwd, 'index.js'),
     },
     mode: 'development',
     module: {
         rules: [
             {
-                test: /(\.js|\.gs)$/,
+                test: /(\.js)$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
             },
@@ -38,7 +38,7 @@ module.exports = {
         new GasWebpackPlugin(),
     ],
     resolve: {
-        extensions: ['*', '.js', '.gs'],
+        extensions: ['*', '.js'],
         modules: [
             'node_modules',
             path.resolve(paths.root, 'projects'),
