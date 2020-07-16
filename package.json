@@ -33,7 +33,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-tap": "^1.0.1",
     "lazypipe": "^1.0.2",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "minimist": "^1.2.0",
     "plugin-error": "^1.0.1",
     "undertaker-forward-reference": "^1.0.2",
